@@ -1,0 +1,16 @@
+CFLAGS = -O3 -Wall -fPIC 
+#LDFLAGS = -shared -L/usr/lib/x86_64-linux-gnu -llua-5.1 
+LDFLAGS = -L/usr/lib/x86_64-linux-gnu -llua-5.1 
+INC = /usr/include/lua5.1
+
+TARGET = test
+
+test:
+	gcc -o test demo.c -g $(CFLAGS) -I$(INC) $(LDFLAGS)
+
+
+#.PHONY: clean
+
+#clean:
+	
+#	rm -rf $(OBJS) $(TARGET)
